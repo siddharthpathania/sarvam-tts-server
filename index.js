@@ -12,7 +12,7 @@ app.post('/tts', async (req, res) => {
       {
         text: text,   
         target_language_code: 'hi-IN',
-        speaker: 'anushka',
+        speaker: 'priya',
         pace: 1.0,
         speech_sample_rate: 8000,
         enable_preprocessing: true,
