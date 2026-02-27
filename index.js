@@ -16,7 +16,7 @@ app.post('/tts', async (req, res) => {
         text: text,   
         target_language_code: 'hi-IN',
         speaker: 'priya',
-        pace: 0.9,
+        pace: 1.1,
         speech_sample_rate: 22050,
         enable_preprocessing: true,
         model: 'bulbul:v3'
