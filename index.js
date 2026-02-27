@@ -6,18 +6,16 @@ app.use(express.json());
 app.post('/tts', async (req, res) => {
   try {
     const text = req.body.message?.text || req.body.text;
-    console.log('Full body:', JSON.stringify(req.body));  // ADD THIS
-    console.log('Extracted text:', text);                 // ADD THIS
-    
-    
+    console.log('Extracted text:', text);
+
     const response = await axios.post(
       'https://api.sarvam.ai/text-to-speech',
       {
-        text: text,   
+        text: text,
         target_language_code: 'hi-IN',
-        speaker: 'priya',
-        pace: 1.1,
-        speech_sample_rate: 22050,
+        speaker: process.env.SPEAKER || 'priya',
+        pace: parseFloat(process.env.PACE || '1.1'),
+        speech_sample_rate: parseInt(process.env.SAMPLE_RATE || '22050'),
         enable_preprocessing: true,
         model: 'bulbul:v3'
       },
