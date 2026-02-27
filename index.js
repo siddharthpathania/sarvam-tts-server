@@ -10,7 +10,7 @@ app.post('/tts', async (req, res) => {
     const response = await axios.post(
       'https://api.sarvam.ai/text-to-speech',
       {
-        inputs: [{ text: text }],
+        text: text,   
         target_language_code: 'hi-IN',
         speaker: 'pavithra',
         pace: 1.0,
