@@ -6,6 +6,9 @@ app.use(express.json());
 app.post('/tts', async (req, res) => {
   try {
     const text = req.body.message?.text || req.body.text;
+    console.log('Full body:', JSON.stringify(req.body));  // ADD THIS
+    console.log('Extracted text:', text);                 // ADD THIS
+    
     
     const response = await axios.post(
       'https://api.sarvam.ai/text-to-speech',
